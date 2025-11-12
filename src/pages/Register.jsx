@@ -1,7 +1,30 @@
-import React from "react";
+import React, { use } from "react";
 import { Link } from "react-router";
+import { AuthContext } from "../contexts/AuthContext";
 
 const Register = () => {
+  const { createUser, setUser } = use(AuthContext);
+
+  const handleRegister = (e) => {
+    e.preventDefault();
+    const name = e.target.name.value;
+    const photo = e.target.photo.value;
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+
+    console.log(name, email, photo, password);
+
+    createUser(email, password)
+      .then((result) => {
+        const user = result.user;
+        // console.log(user);
+        setUser(user);
+      })
+      .catch((error) => {
+        alert(error);
+      });
+  };
+
   return (
     <div className="hero bg-base-200 min-h-screen">
       <div className="hero-content">
@@ -10,7 +33,7 @@ const Register = () => {
             <h1 className="text-5xl font-semibold text-[#e21266]">
               Register now!
             </h1>
-            <form>
+            <form onSubmit={handleRegister}>
               <fieldset className="fieldset">
                 {/* name  */}
                 <label className="label">Name</label>
@@ -46,12 +69,16 @@ const Register = () => {
                   name="password"
                   className="input w-full"
                   placeholder="Password"
+                  required
                 />
-                <button className="btn bg-[#e21266] text-white mt-4">
+                <button
+                  type="submit"
+                  className="btn bg-[#e21266] text-white mt-4"
+                >
                   Sign up
                 </button>
                 {/* Google  */}
-                <button className="btn text-white bg-black border-[#e5e5e5] mt-4">
+                <button className="btn text-white bg-gray-900 border-[#e5e5e5] mt-4">
                   <svg
                     aria-label="Google logo"
                     width="16"

@@ -34,7 +34,7 @@ const Login = () => {
                   Login
                 </button>
                 {/* Google  */}
-                <button className="btn text-white bg-black border-[#e5e5e5] mt-4">
+                <button className="btn text-white bg-gray-900 border-[#e5e5e5] mt-4">
                   <svg
                     aria-label="Google logo"
                     width="16"

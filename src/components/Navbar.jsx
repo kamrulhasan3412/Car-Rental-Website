@@ -4,26 +4,26 @@ import { Link, NavLink } from "react-router";
 const Navbar = () => {
   const links = (
     <>
-      <li className="text-lg text-white">
+      <li className="text-lg text-white hover:text-[#e21266]">
         <NavLink to="/">Home</NavLink>
       </li>
-      <li className="text-lg text-white">
+      <li className="text-lg text-white hover:text-[#e21266]">
         <NavLink to="/addCar">Add Car</NavLink>
       </li>
-      <li className="text-lg text-white">
+      <li className="text-lg text-white hover:text-[#e21266]">
         <NavLink to="/myListings">My Listings</NavLink>
       </li>
-      <li className="text-lg text-white">
+      <li className="text-lg text-white hover:text-[#e21266]">
         <NavLink to="/myBookings">My Bookings</NavLink>
       </li>
-      <li className="text-lg text-white">
+      <li className="text-lg text-white hover:text-[#e21266]">
         <NavLink to="/browseCars">Browse Cars</NavLink>
       </li>
     </>
   );
 
   return (
-    <div className="bg-[#e21266] shadow-sm">
+    <div className="bg-gray-900 shadow-sm">
       <div className="navbar w-11/12 mx-auto">
         <div className="navbar-start">
           <div className="dropdown">
@@ -46,7 +46,7 @@ const Navbar = () => {
             </div>
             <ul
               tabIndex="-1"
-              className="menu menu-sm dropdown-content bg-[#e21266] rounded-box z-1 mt-5 w-52 p-2 shadow"
+              className="menu menu-sm dropdown-content bg-[#e21266] rounded-box z-50 mt-5 w-52 p-2 shadow"
             >
               {links}
             </ul>
